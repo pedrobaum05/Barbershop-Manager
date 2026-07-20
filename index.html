@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbearia - Agendamento</title>
+
+    <!-- LINKAMENTO CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/galeria.css">
+    <link rel="stylesheet" href="css/mapa.css">
+
+    <!-- Leaflet CSS(MAPA) ← AQUI DENTRO -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header>
+        <div class="header-content">
+            <img src="images/logo.jpg" alt="Barbearia Galileia">
+            <h1>Barbearia Galiléia</h1>
+            <p class="slogan">Mais do que um corte, uma experiência.</p>
+        </div>
+    </header>
+
+    <!-- NAVEGAÇÃO -->
+    <nav class="navbar">
+        <a href="#fotos">Galeria</a>
+        <a href="#agendamento">Agendar</a>
+        <a href="#contato">Contato</a>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <h2>Bem-vindo à Barbearia Galileia 💈</h2>
+        <p>Onde estilo, qualidade e tradição se encontram.</p>
+    </section>
+
+    <!-- GALERIA DE CORTES -->
+    <section id="fotos" class="galeria">
+        <div class="container">
+            <h2>Nossos Cortes</h2>
+            <div class="fotos-container">
+
+                <div class="foto-card">
+                    <img src="images/corte3.jpg" alt="Corte Clássico">
+                    <h3>Corte Clássico</h3>
+                    <p>R$ 25,00</p>
+                </div>
+
+                <div class="foto-card">
+                    <img src="images/corte1.jpg" alt="Corte Degradê">
+                    <h3>Corte Degradê</h3>
+                    <p>R$ 35,00</p>
+                </div>
+
+                <div class="foto-card">
+                    <img src="images/corte2.jpg" alt="Corte na Tesoura">
+                    <h3>Corte na Tesoura</h3>
+                    <p>R$ 30,00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVIÇOS -->
+    <section class="servicos">
+        <div class="container">
+            <h2>Nossos Serviços</h2>
+            <div class="servicos-container">
+
+                <div class="servico-item">
+                    <h3>✂️ Corte Social</h3>
+                    <p>Corte clássico para quem valoriza elegância e precisão.</p>
+                    <span class="preco">R$ 25,00</span>
+                </div>
+
+                <div class="servico-item">
+                    <h3>✂️ Corte Degradê</h3>
+                    <p>Corte moderno com acabamento impecável.</p>
+                    <span class="preco">R$ 35,00</span>
+                </div>
+
+                <div class="servico-item">
+                    <h3>✂️ Corte na Tesoura</h3>
+                    <p>Precisão e estilo para um visual sofisticado.</p>
+                    <span class="preco">R$ 30,00</span>
+                </div>
+
+                <div class="servico-item">
+                    <h3>🧔🏽Barba</h3>
+                    <p>Barba alinhada com acabamento impecável.</p>
+                    <span class="preco">R$ 30,00</span>
+                </div>
+
+                <div class="servico-item">
+                    <h3>✂️🧔🏽 Corte + Barba</h3>
+                    <p>Visual completo com estilo e acabamento premium.</p>
+                    <span class="preco">R$ 60,00</span>
+                </div>
+
+                <div class="servico-item">
+                    <h3>✂️💈 Corte + Barba + Sobrancelha</h3>
+                    <p>Pacote completo para um visual renovado.</p>
+                    <span class="preco">R$ 65,00</span>
+                </div>
+
+                <div class="servico-item">
+                    <h3>✂️💈 Corte + Barba + Hidratação</h3>
+                    <p>Tratamento completo para um visual renovado e impecável.</p>
+                    <span class="preco">R$ 65,00</span>
+                </div>
+
+                <div class="servico-item">
+                    <h3>✂️💈 Corte + Barba + Coloração</h3>
+                    <p>Visual completo com coloração e acabamento profissional.</p>
+                    <span class="preco">R$ 65,00</span>
+                </div>
+
+                <div class="servico-item">
+                    <h3>💧 Hidratação Capilar</h3>
+                    <p>Hidratação profunda para cabelos saudáveis e com brilho.</p>
+                    <span class="prreco"> R$25,00</span>
+                </div>
+
+                <div class="servico-item">
+                    <h3>💧 Hidratação da Barba</h3>
+                    <p>Barba hidratada, macia e com aspecto impecável.</p>
+                    <span class="preco"> R$ 20,00</span>
+                </div>
+
+                <div class="servico-item">
+                    <h3>✨ Sobrancelha</h3>
+                    <p>Design preciso para valorizar sua expressão.</p>
+                    <span class="preco">R$ 10,00</span>
+                </div>
+
+                <div class="servico-item">
+                    <h3>🎨 Pigmentação</h3>
+                    <p>Realce o visual com um acabamento natural e duradouro.</p>
+                    <span class="preco">R$ 40,00</span>
+                </div>
+
+                <div class="servico-item">
+                    <h3>👃 Limpeza Facial</h3>
+                    <p>Remova impurezas e deixe a pele renovada.</p>
+                    <span class="preco">R$ 15,00</span>
+                </div>
+
+                <div class="servico-item">
+                    <h3>🕯️ Depilação de Ouvido</h3>
+                    <p>Remoção segura para um acabamento impecável.</p>
+                    <span class="preco">R$ 20,00</span>
+                </div>
+
+                <div class="servico-item">
+                    <h3>🕯️ Depilação de Nariz</h3>
+                    <p>Mais conforto e um visual sempre bem cuidado.</p>
+                    <span class="preco">R$ 20,00</span>
+                </div>
+
+                <div class="servico-item">
+                    <h3>💆 Barboterapia</h3>
+                    <p>Tratamento relaxante para cuidar da barba e da pele.</p>
+                    <span class="preco">R$ 35,00</span>
+                </div>
+
+
+                <div class="servico-item">
+                    <h3>💇 Freestyle</h3>
+                    <p>Desenhos personalizados para um visual único.</p>
+                    <span class="preco">R$ 20,00</span>
+                </div>
+
+                <div class="servico-item">
+                    <h3>✨❄️ Luzes + Nevou</h3>
+                    <p>Transforme seu visual com mechas e efeito platinado de alto padrão.</p>
+                    <span class="preco">R$ 120,00</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- PLANOS MENSAIS -->
+    <section class="planos">
+        <div class="container">
+            <h2>Planos Mensais</h2>
+            <div class="servicos-container">
+                <div class="servico-item destaque">
+                    <h3>✂️ Corte Normal</h3>
+                    <p>Corte normal, sem plano</p>
+                    <span class="preco">Consulte</span>
+                </div>
+
+                <div class="servico-item destaque">
+                    <h3>✂️ Plano Corte • 2x por mês</h3>
+                    <p>Dois cortes mensais para manter seu visual sempre em dia.</p>
+                    <span class="preco">R$ 60,00</span>
+                </div>
+
+                <div class="servico-item destaque">
+                    <h3>✂️ Plano Corte • 3x por mês</h3>
+                    <p>Três cortes mensais com praticidade e excelente custo-benefício.</p>
+                    <span class="preco">R$ 90,00</span>
+                </div>
+
+
+                <div class="servico-item destaque">
+                    <h3>✂️ Plano Corte • 4x por mês</h3>
+                    <p>Um corte por semana para um visual impecável o mês inteiro.</p>
+                    <span class="preco">R$ 110,00</span>
+                </div>
+
+                <div class="servico-item destaque">
+                    <h3>✂️💈 Plano Corte + Barba • 2x por mês</h3>
+                    <p> Dois atendimentos completos para manter seu estilo em dia.</p>
+                    <span class="preco">R$ 120,00</span>
+                </div>
+
+                <div class="servico-item destaque">
+                    <h3>✂️💈 Plano Corte + Barba • 3x por mês</h3>
+                    <p>Três atendimentos completos com mais economia e praticidade.</p>
+                    <span class="preco">R$ 160,00</span>
+                </div>
+
+                <div class="servico-item destaque">
+                    <h3>✂️💈 Plano Corte + Barba • 4x por mês</h3>
+                    <p>Um atendimento completo por semana para um visual sempre estiloso e impecável.</p>
+                    <span class="preco">R$ 200,00</span>
+                </div>
+
+            </div>
+        </div>
+        </div>
+    </section>
+
+
+    <!-- FORMULÁRIO DE AGENDAMENTO -->
+    <section id="agendamento" class="agendamento">
+        <div class="container">
+            <h2>Agende seu Horário</h2>
+            <form id="formulario-agendamento" class="form">
+
+                <div class="form-grupo">
+                    <label for="nome">Seu nome </label>
+                    <input type="text" id="nome" name="nome" placeholder="" required>
+                </div>
+
+                <div class="form-grupo">
+                    <label for="email">E-mail </label>
+                    <input type="email" id="email" name="email" placeholder="" required>
+
+                </div>
+
+                <div class="form-grupo">
+                    <label for="telefone">Telefone </label>
+                    <input type="tel" id="telefone" name="telefone" placeholder="" required>
+
+                </div>
+
+                <div class="form-linha">
+                    <div class="form-grupo">
+                        <label for="data">Data </label>
+                        <input type="date" id="data" name="data" required>
+                    </div>
+
+                    <div class="form-grupo">
+                        <label for="hora">Hora </label>
+                        <input type="time" id="hora" name="hora" required>
+                    </div>
+                </div>
+
+                <!-- Tipo de Atendimento -->
+
+                <div class="form-grupo">
+                    <label for="tipo">Tipo de Atendimento</label>
+                    <select id="tipo" name="tipo" required>
+                        <option value="">Escolha uma opção</option>
+                        <option value="servico">Atendimento Tradicional</option>
+                        <option value="plano">Plano Mensal</option>
+                    </select>
+                </div>
+
+                <!-- Serviços Avulsos -->
+                <div class="form-grupo" id="servicos-avulsos">
+                    <label for="servico">Serviços</label>
+                    <select id="servico" name="servico">
+                        <option value="">Escolha um serviço</option>
+
+
+                        <option value="corte-social">✂️ Corte Social</option>
+                        <option value="corte-tesoura">✂️ Corte na Tesoura</option>
+                        <option value="corte-degrade">✂️ Corte Degradê</option>
+                        <option value="freestyle">💇 Freestyle</option>
+
+                        <option value="corte-barba">✂️💈 Corte + Barba</option>
+                        <option value="corte-barba-sobrancelha">✂️💈 Corte + Barba + Sobrancelha</option>
+                        <option value="corte-barba-hidratacao">✂️💈 Corte + Barba + Hidratação</option>
+                        <option value="corte-barba-coloracao">✂️💈 Corte + Barba + Coloração</option>
+                        <option value="barboterapia">💆 Barboterapia</option>
+
+                        <option value="sobrancelha">✨ Sobrancelha</option>
+                        <option value="limpeza-facial">👃 Limpeza Facial</option>
+                        <option value="hidratacao-capilar">💧 Hidratação Capilar</option>
+                        <option value="hidratacao-barba">💧 Hidratação da Barba</option>
+                        <option value="pigmentacao">🎨 Pigmentação</option>
+                        <option value="luzes-nevou">✨❄️ Luzes + Nevou</option>
+                        <option value="depilacao-ouvido">🕯️ Depilação de Ouvido</option>
+                        <option value="depilacao-nariz">🕯️ Depilação de Nariz</option>
+                        <option value="selagem-capilar">🧴 Selagem Capilar</option>
+
+                    </select>
+                </div>
+
+
+
+                <!-- PLANOS MENSAIS/PARTE DOS AGENDAMENTOS-->
+                <div class="form-grupo" id="planos-mensais">
+                    <label for="plano">Plano Mensal</label>
+                    <select id="plano" name="plano">
+                        <option value="">Escolha um Plano</option>
+
+                        <optgroup label="Corte Normal">
+                            <option value="corte-normal">✂️ Corte Normal (Sem Plano) - Consulte Preço</option>
+
+                        </optgroup>
+
+                        <optgroup label="Corte">
+                            <option value="plano-corte-2">📅 Corte 2x ao Mês - R$ 60,00</option>
+                            <option value="plano-corte-3">📅 Corte 3x ao Mês - R$ 90,00</option>
+                            <option value="plano-corte-4">📅 Corte 4x ao Mês - R$ 110,00</option>
+                        </optgroup>
+
+                        <optgroup label="Corte + Barba">
+                            <option value="plano-corte-barba-2">📅 Corte + Barba 2x ao Mês - R$ 120,00</option>
+                            <option value="plano-corte-barba-3">📅 Corte + Barba 3x ao Mês - R$ 160,00</option>
+                            <option value="plano-corte-barba-4">📅 Corte + Barba 4x ao Mês - R$ 200,00</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <div class="form-grupo">
+                    <label for="mensagem">Mensagem (Opcional)</label>
+                    <textarea id="mensagem" name="mensagem" placeholder="Deixe sua mensagem aqui..."
+                        rows="4"></textarea>
+                </div>
+
+                <button type="submit" class="btn-agendar">AGENDAR AGORA</button>
+                <p class="form-info">* Campos obrigatórios*</p>
+            </form>
+        </div>
+    </section>
+
+
+
+    <!-- HORÁRIO DE FUNCIONAMENTO -->
+    <section class="horarios">
+        <div class="container">
+            <h2>Horário de Funcionamento</h2>
+            <div class="Horários-container">
+                <div class="horario">
+                    <p><strong>Segunda a Sexta: </strong>8:00 - 18:00</p>
+                </div>
+
+                <div class="horario">
+                    <p><strong>Sábado: </strong>9:00 - 14:00</p>
+                </div>
+
+                <div class="horario">
+                    <p><strong>Domingo: </strong>Fechado</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DEPOIMENTOS -->
+    <section class="depoimentos">
+        <div class="container">
+            <h2> Avaliações dos nossos clientes </h2>
+            <div class="depoimentos-container">
+
+                <div class="depoimento">
+                    <p class="estrelas">⭐⭐⭐⭐⭐</p>
+                    <p class="texto">Atendimento excelente, corte impecável e um ambiente muito agradável.</p>
+                    <p class="autor">Bernando Caciamani</p>
+                </div>
+
+                <div class="depoimento">
+                    <p class="estrelas">⭐⭐⭐⭐⭐</p>
+                    <p class="texto">Qualidade do início ao fim. Atendimento personalizado e resultado excepcional.</p>
+                    <p class="autor">Samuel Cavalheiro</p>
+                </div>
+
+                <div class="depoimento">
+                    <p class="estrelas">⭐⭐⭐⭐⭐</p>
+                    <p class="texto">Qualidade, pontualidade e um serviço que faz toda a diferença. Recomendo!</p>
+                    <p class="autor">Gabriel Zugel</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAPA -->
+    <section class="mapa">
+        <div class="container">
+            <h2>Visite-nos</h2>
+            <div id="map"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTATO -->
+    <section id="contato" class="contato">
+        <div class="container">
+            <h2>Entre em Contato</h2>
+            <div class="contato-info">
+                <p>📍 <strong>Endereço: Av. Costa e Silva, 2731 - Ildo Meneghetti, Três Passos - RS, 98600-000</strong>
+                </p>
+                <p>📞 <strong>Telefone: 55 9725-4539</strong> </p>
+                <p>📧 <strong>Email: jesusarthur81@gmail.com</strong> </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <p>&copy; 2026 Barbearia. Todos os direitos reservados.</p>
+        <p>Desenvolvido por: <strong>Pedro Baum</strong></p>
+    </footer>
+
+    <!-- Leaflet JS/API -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+
+    <!-- SCRIPTS DO PROJETO-->
+    <script src="js/mapa.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

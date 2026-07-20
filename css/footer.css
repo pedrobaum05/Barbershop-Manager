@@ -1,0 +1,15 @@
+/*Só o rodapé do site*/
+
+/* ===== RODAPÉ ===== */
+footer {
+    background: var(--cor-principal);
+    color: var(--cor-branca);
+    text-align: center;
+    padding: 30px 20px;
+    border-top: 4px solid var(--cor-secundaria);
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 0.95rem;
+}

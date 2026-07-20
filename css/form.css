@@ -1,0 +1,114 @@
+/*Formulário e o Button juntos*/
+
+/* ===== FORMULÁRIO ===== */
+.agendamento {
+    padding: 60px 20px;
+    background: var(--cor-branca);
+}
+
+.agendamento h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: var(--cor-principal);
+}
+
+.form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--cor-fundo);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-grupo {
+    margin-bottom: 20px;
+}
+
+.form-linha {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--cor-principal);
+    font-size: 0.95rem;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--cor-cinza);
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: Arial, sans-serif;
+    transition: border-color var(--transicao), box-shadow var(--transicao);
+}
+
+select {
+    position: relative;
+    z-index: 9999;
+    cursor: pointer;
+}
+
+select option {
+    padding: 10px;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--cor-secundaria);
+    background-color: var(--cor-branca);
+    box-shadow: 0 0 5px rgba(231, 76, 60, 0.3);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+}
+
+textarea {
+    resize: vertical;
+    font-family: Arial, sans-serif;
+}
+
+/* ===== BOTÃO ===== */
+.btn-agendar {
+    width: 100%;
+    padding: 15px;
+    background: var(--cor-secundaria);
+    color: var(--cor-branca);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background var(--transicao), transform var(--transicao), box-shadow var(--transicao);
+    margin-top: 10px;
+}
+
+.btn-agendar:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+
+.btn-agendar:active {
+    transform: translateY(0);
+}
+
+.form-info {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 15px;
+}

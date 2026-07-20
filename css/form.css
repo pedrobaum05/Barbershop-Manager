@@ -4,6 +4,8 @@
 .agendamento {
     padding: 60px 20px;
     background: var(--cor-branca);
+    position: relative;
+    z-index: 1;
 }
 
 .agendamento h2 {
@@ -20,6 +22,8 @@
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
 }
 
 .form-grupo {
@@ -48,6 +52,8 @@ input, select, textarea {
     font-size: 1rem;
     font-family: Arial, sans-serif;
     transition: border-color var(--transicao), box-shadow var(--transicao);
+    position: relative;
+    z-index: 2;
 }
 
 select {

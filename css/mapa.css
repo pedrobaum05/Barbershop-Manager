@@ -3,6 +3,8 @@
 .mapa {
     padding: 60px 20px;
     background: var(--cor-fundo);
+    position: relative;
+    z-index: 1;
 }
 
 .mapa h2 {
@@ -18,6 +20,8 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border: 2px solid var(--cor-secundaria);
+    position: relative;
+    z-index: 1;
 }
 
 

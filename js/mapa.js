@@ -8,7 +8,7 @@ function inicializarMapa () {
     //Cria o mapa
     const mapa = L.map('map').setView(coordenadas, 18)
 
-    //Base do mapa 
+    //Base do mapa (API)
     L.tileLayer('https://tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png', {
         attribution:  '© OpenStreetMap'
 

@@ -5,7 +5,7 @@ console.log(document.getElementById('servicos-avulsos'))
 console.log(document.getElementById('planos-mensais'))
 
 
-// ===== MOSTRAR/ESCONDER SELECTS =====
+// ===== MOSTRA/ESCONDE SELECTS =====
 document.getElementById('tipo').addEventListener('change', function () {
 
     const tipo = this.value

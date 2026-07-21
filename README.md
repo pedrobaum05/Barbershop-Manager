@@ -13,7 +13,7 @@ Negócios baseados em agendamentos frequentemente perdem clientes por não terem
 - **JavaScript ES6+** - Interatividade 
 - **Leaflet** - Mapa interativo (API)
 
-## 📁 Estrutura - Partícionamento de Arquivos
+## 📁 Estrutura - Particionamento de Arquivos
 
 ## Barbershop-Manager/ 
 - index.html 

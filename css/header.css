@@ -98,19 +98,19 @@ header .info-header {
 /* RESPONSIVO CELULAR */
 @media (max-width: 480px) {
     header h1 {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
     }
 
     header img {
-        max-width: 80px;
+        max-width: 110px;
         margin-bottom: 10px;
     }
 
     header .slogan {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 
     header .info-header {
-        font-size: 0.8rem;
+        font-size: 0.85rem;
     }
 }

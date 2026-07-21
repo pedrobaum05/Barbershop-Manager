@@ -46,22 +46,25 @@ document.getElementById('formulario-agendamento').addEventListener('submit', fun
     }
 
     //Valida planos/serviços
+    let opcaoServico = 'Não especificado'
+
     if (tipo === 'servico') {
-        const servico = document.getElementById('servico').value
-        if (!servico) {
+        opcaoServico = document.getElementById('servico').value
+        if (!opcaoServico) {
             alert('Por favor, escolha um serviço!')
             return;
         }
+
     } else if (tipo === 'plano') {
-        const plano = document.getElementById('plano').value
-        if (!plano) {
+        opcaoServico = document.getElementById('plano').value
+        if (!opcaoServico) {
             alert('Por favor, escolha um plano')
             return;
         }
+
     }
 
     //Mensagem do WhatsApp
-    const opcaoServico = tipo === 'servico' ? servico : plano
     const mensagem = `Olá! Gostaria de agendar:%0A%0ANome: ${nome}%0AEmail: ${email}%0ATelefone: ${telefone}%0AData: ${data}%0AHora: ${hora}%0AServiço: ${opcaoServico}`
 
     window.open(`https://wa.me/55997254539?text=${mensagem}`, '_blank')

@@ -9,7 +9,54 @@ footer {
     border-top: 4px solid var(--cor-secundaria);
 }
 
-footer p {
-    margin: 5px 0;
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    text-align: center;
+}
+
+.footer-info p {
+    margin: 10px 0;
     font-size: 0.95rem;
+}
+
+.footer-redes h3 {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.redes-sociais {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.redes-sociais a {
+    color: var(--cor-secundaria);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color var(--transicao), transform var(--transicao);
+    display: inline-block;
+}
+
+.redes-sociais a:hover {
+    color: var(--cor-branca);
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .redes-sociais {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
 }

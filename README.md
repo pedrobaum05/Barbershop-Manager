@@ -15,26 +15,27 @@ Negócios baseados em agendamentos frequentemente perdem clientes por não terem
 
 ## 📁 Estrutura - Partícionamento de Arquivos
 
-Barbershop-Manager/ 
-├── index.html 
-├── css/ 
-│ ├── main.css 
-│ ├── header.css  
-│ ├── galeria.css 
-│ ├── form.css 
-│ ├── mapa.css 
-│ └── footer.css 
-├── js/ 
-│ ├── mapa.js 
-│ └── script.js 
-└── images/
+## Barbershop-Manager/ 
+- index.html 
+- css/ 
+- main.css 
+- header.css  
+- galeria.css 
+- form.css 
+- mapa.css 
+- footer.css
+----------------
+- js/ 
+- mapa.js 
+- script.js
+----------------
+- images/
 
 ## ✨ Funcionalidades
-
-✅ Galeria de fotos e preços 
-✅ Formulário de agendamento 
-✅ Mapa interativo 
-✅ 100% responsivo
+- Galeria de fotos e preços 
+- Formulário de agendamento 
+- Mapa interativo 
+- 100% responsivo
 
 ## 🚀 Como Acessar
 

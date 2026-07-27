@@ -42,12 +42,18 @@ document.getElementById('formulario-agendamento').addEventListener('submit', fun
     //Valida os campos obrigatórios
     if (!nome || !email || !telefone || !data || !hora || !tipo) {
         alert('Por favor, preencha todos os campos obrigatórios')
-        return;
+        return
     }
 
     // ===== VALIDAÇÃO DOS HORÁRIOS DE ATENDIMENTO =====
-    const dataObj = new Date((data + 'T00:00:00'))
+    const dataObj = new Date(data + 'T00:00:00')
     const diaSemana = dataObj.getDay()
+
+    if (!hora) {
+        alert('Por favor, selecione um horário!')
+        return
+    }
+
     const horaAgendamento = parseInt(hora.split(':')[0])
 
     // Domingo - Fechado
@@ -79,14 +85,14 @@ document.getElementById('formulario-agendamento').addEventListener('submit', fun
         opcaoServico = document.getElementById('servico').value
         if (!opcaoServico) {
             alert('Por favor, escolha um serviço!')
-            return;
+            return
         }
 
     } else if (tipo === 'plano') {
         opcaoServico = document.getElementById('plano').value
         if (!opcaoServico) {
             alert('Por favor, escolha um plano')
-            return;
+            return
         }
 
     }
@@ -100,5 +106,5 @@ document.getElementById('formulario-agendamento').addEventListener('submit', fun
     alert('Agendamento realizado com sucesso! ')
 
     //Clean Forms
-    this.reset();
+    this.reset()
 })

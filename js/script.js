@@ -46,10 +46,9 @@ document.getElementById('formulario-agendamento').addEventListener('submit', fun
     }
 
     // ===== VALIDAÇÃO DOS HORÁRIOS DE ATENDIMENTO =====
-    const data = new Date(document.getElementById('data').value)
-    const diaSemana = data.getDay()
-
-    const horaAgendamento = parseInt(document.getElementById('hora').value.split(':')[0])
+    const dataObj = new Date((data + 'T00:00:00'))
+    const diaSemana = dataObj.getDay()
+    const horaAgendamento = parseInt(hora.split(':')[0])
 
     // Domingo - Fechado
     if (diaSemana === 0) {

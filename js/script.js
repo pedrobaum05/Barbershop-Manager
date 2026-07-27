@@ -45,6 +45,34 @@ document.getElementById('formulario-agendamento').addEventListener('submit', fun
         return;
     }
 
+    // ===== VALIDAÇÃO DOS HORÁRIOS DE ATENDIMENTO =====
+    const data = new Date(document.getElementById('data').value)
+    const diaSemana = data.getDay()
+
+    const horaAgendamento = parseInt(document.getElementById('hora').value.split(':')[0])
+
+    // Domingo - Fechado
+    if (diaSemana === 0) {
+        alert('Barbearia fechada no domingo!')
+        return
+    }
+
+    //Segunda a sexta 8h-21h
+    if (diaSemana >= 1 && diaSemana <= 5) {
+        if (horaAgendamento < 8 || horaAgendamento >= 21) {
+            alert('Atendimento seg-sexta: 8h ás 21h')
+            return
+        }
+    }
+
+    //Sábado 08h-17h
+    if (diaSemana === 6) {
+        if (horaAgendamento < 8 || horaAgendamento >= 17) {
+            alert('Atendimento sábado: 8h ás 17h')
+            return
+        }
+    }
+
     //Valida planos/serviços
     let opcaoServico = 'Não especificado'
 

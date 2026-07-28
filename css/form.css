@@ -86,6 +86,12 @@ textarea {
     font-family: Arial, sans-serif;
 }
 
+#servicos-avulsos,
+#planos-mensais {
+display: none;
+}
+
+
 /* ===== BOTÃO ===== */
 .btn-agendar {
     width: 100%;

@@ -67,6 +67,27 @@ document.getElementById('formulario-agendamento').addEventListener('submit', fun
         "selagem-capilar": 40
     }
 
+    const nomeServicos = {
+        "corte-social": "Corte Social",
+        "corte-tesoura": "Corte na Tesoura",
+        "corte-degrade": "Corte Degradê",
+        "freestyle": "Freestyle",
+        "corte-barba": "Corte + Barba",
+        "corte-barba-sobrancelha": "Corte + Barba + Sobrancelha",
+        "corte-barba-hidratacao": "Corte + Barba + Hidratação",
+        "corte-barba-coloracao": "Corte + Barba + Coloração",
+        "barboterapia": "Barboterapia",
+        "sobrancelha": "Sobrancelha",
+        "limpeza-facial": "Limpeza Facial",
+        "hidratacao-capilar": "Hidratação Capilar",
+        "hidratacao-barba": "Hidratação da Barba",
+        "pigmentacao": "Pigmentação",
+        "luzes-nevou": "Luzes + Nevou",
+        "depilacao-ouvido": "Depilação de Ouvido",
+        "depilacao-nariz": "Depilação de Nariz",
+        "selagem-capilar": "Selagem Capilar"
+    }
+
     let tempoTotal = 0
 
     tempoTotal += tempos[servico] || 0
@@ -145,9 +166,9 @@ document.getElementById('formulario-agendamento').addEventListener('submit', fun
         %0APlano Escolhido: ${plano}`
     } else {
         mensagem += `
-        %0AServiço 1: ${servico}
-        %0AServiço 2: ${servico2 || 'Nenhum'}
-        %0AServiço 3: ${servico3 || 'Nenhum'}
+        %0AServiço 1: ${nomeServicos[servico]}
+        %0AServiço 2: ${nomeServicos[servico2] || 'Nenhum'}
+        %0AServiço 3: ${nomeServicos[servico3] || 'Nenhum'}
         %0ATempo estimado: ${tempoTotal} minutos`
     }
 

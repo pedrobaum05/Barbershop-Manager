@@ -39,6 +39,40 @@ document.getElementById('formulario-agendamento').addEventListener('submit', fun
     const hora = document.getElementById('hora').value
     const tipo = document.getElementById('tipo').value
 
+    const servico = document.getElementById('servico').value
+    const servico2 = document.getElementById('servico2').value
+    const servico3 = document.getElementById('servico3').value
+
+    const plano = document.getElementById('plano').value
+
+    //Tempos dos serviços
+    const tempos = {
+        "corte-social": 30,
+        "corte-tesoura": 30,
+        "corte-degrade": 40,
+        "freestyle": 35,
+        "corte-barba": 45,
+        "corte-barba-sobrancelha": 60,
+        "corte-barba-hidratacao": 55,
+        "corte-barba-coloracao": 50,
+        "barboterapia": 25,
+        "sobrancelha": 10,
+        "limpeza-facial": 25,
+        "hidratacao-capilar": 25,
+        "hidratacao-barba": 30,
+        "pigmentacao": 45,
+        "luzes-nevou": 60,
+        "depilacao-ouvido": 30,
+        "depilacao-nariz": 15,
+        "selagem-capilar": 40
+    }
+
+    let tempoTotal = 0
+
+    tempoTotal += tempos[servico] || 0
+    tempoTotal += tempos[servico2] || 0
+    tempoTotal += tempos[servico3] || 0
+
     //Valida os campos obrigatórios
     if (!nome || !email || !telefone || !data || !hora || !tipo) {
         alert('Por favor, preencha todos os campos obrigatórios')
@@ -64,7 +98,7 @@ document.getElementById('formulario-agendamento').addEventListener('submit', fun
 
     //Segunda a sexta 8h-21h
     if (diaSemana >= 1 && diaSemana <= 5) {
-        if (horaAgendamento < 8 || horaAgendamento >= 21) {
+        if (horaAgendamento < 8 || horaAgendamento > 21) {
             alert('Atendimento seg-sexta: 8h ás 21h')
             return
         }
@@ -98,7 +132,24 @@ document.getElementById('formulario-agendamento').addEventListener('submit', fun
     }
 
     //Mensagem do WhatsApp
-    const mensagem = `Olá! Gostaria de agendar:%0A%0ANome: ${nome}%0AEmail: ${email}%0ATelefone: ${telefone}%0AData: ${data}%0AHora: ${hora}%0AServiço: ${opcaoServico}`
+    let mensagem = `Olá! Gostaria de agendar:
+
+    %0A%0ANome: ${nome}
+    %0AEmail: ${email}
+    %0ATelefone: ${telefone}
+    %0AData: ${data}
+    %0AHora: ${hora}`
+
+    if (tipo === 'plano') {
+        mensagem += `
+        %0APlano Escolhido: ${plano}`
+    } else {
+        mensagem += `
+        %0AServiço 1: ${servico}
+        %0AServiço 2: ${servico2 || 'Nenhum'}
+        %0AServiço 3: ${servico3 || 'Nenhum'}
+        %0ATempo estimado: ${tempoTotal} minutos`
+    }
 
     window.open(`https://wa.me/55997254539?text=${mensagem}`, '_blank')
 

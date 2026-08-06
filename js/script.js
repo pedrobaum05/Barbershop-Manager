@@ -93,9 +93,9 @@ document.getElementById('formulario-agendamento').addEventListener('submit', fun
     "plano-corte-2": "Corte 2x ao Mês - R$ 60,00",
     "plano-corte-3": "Corte 3x ao Mês - R$ 90,00",
     "plano-corte-4": "Corte 4x ao Mês - R$ 110,00",
-    "plano-corte-barba-2": "Corte + Barba 2x ao Mês - R$ 120,00",
-    "plano-corte-barba-3": "Corte + Barba 3x ao Mês - R$ 160,00",
-    "plano-corte-barba-4": "Corte + Barba 4x ao Mês - R$ 200,00"
+    "plano-corte-barba-2": "Corte e Barba 2x ao Mês - R$ 120,00",
+    "plano-corte-barba-3": "Corte e Barba 3x ao Mês - R$ 160,00",
+    "plano-corte-barba-4": "Corte e Barba 4x ao Mês - R$ 200,00"
     }
 
     let tempoTotal = 0

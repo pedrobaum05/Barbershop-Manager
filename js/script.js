@@ -88,6 +88,16 @@ document.getElementById('formulario-agendamento').addEventListener('submit', fun
         "selagem-capilar": "Selagem Capilar"
     }
 
+    const nomePlanos = {
+    "corte-normal": "Corte Normal (Sem Plano) - Consulte Preço",
+    "plano-corte-2": "Corte 2x ao Mês - R$ 60,00",
+    "plano-corte-3": "Corte 3x ao Mês - R$ 90,00",
+    "plano-corte-4": "Corte 4x ao Mês - R$ 110,00",
+    "plano-corte-barba-2": "Corte + Barba 2x ao Mês - R$ 120,00",
+    "plano-corte-barba-3": "Corte + Barba 3x ao Mês - R$ 160,00",
+    "plano-corte-barba-4": "Corte + Barba 4x ao Mês - R$ 200,00"
+    }
+
     let tempoTotal = 0
 
     tempoTotal += tempos[servico] || 0
@@ -163,7 +173,7 @@ document.getElementById('formulario-agendamento').addEventListener('submit', fun
 
     if (tipo === 'plano') {
         mensagem += `
-        %0APlano Escolhido: ${plano}`
+        %0APlano Escolhido: ${nomePlanos[plano]}`
     } else {
         mensagem += `
         %0AServiço 1: ${nomeServicos[servico]}

@@ -1,8 +1,10 @@
-const express = require ("express")
+const express = require("express")
+const cors =    require('cors')
 
 const app = express()
 
 app.use(express.json())
+app.use(cors())
 
 const agendamentosRoutes = require("./routes/agendamentos")
 
@@ -20,6 +22,6 @@ app.get("/", (req, res) => {
 
 app.use("/agendamentos", agendamentosRoutes)
 
-app.listen(PORT,() => {
+app.listen(PORT, () => {
     console.log(`Servidor rodando em http://localhost:${PORT}`)
 })

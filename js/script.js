@@ -28,7 +28,7 @@ document.getElementById('tipo').addEventListener('change', function () {
 })
 
 // ===== SUBMETER FORMULÁRIO =====
-document.getElementById('formulario-agendamento').addEventListener('submit', function (e) {
+document.getElementById('formulario-agendamento').addEventListener('submit', async function (e) {
     e.preventDefault()
 
     //Pega os dados
@@ -89,13 +89,13 @@ document.getElementById('formulario-agendamento').addEventListener('submit', fun
     }
 
     const nomePlanos = {
-    "corte-normal": "Corte Normal (Sem Plano) - Consulte Preço",
-    "plano-corte-2": "Corte 2x ao Mês - R$ 60,00",
-    "plano-corte-3": "Corte 3x ao Mês - R$ 90,00",
-    "plano-corte-4": "Corte 4x ao Mês - R$ 110,00",
-    "plano-corte-barba-2": "Corte e Barba 2x ao Mês - R$ 120,00",
-    "plano-corte-barba-3": "Corte e Barba 3x ao Mês - R$ 160,00",
-    "plano-corte-barba-4": "Corte e Barba 4x ao Mês - R$ 200,00"
+        "corte-normal": "Corte Normal (Sem Plano) - Consulte Preço",
+        "plano-corte-2": "Corte 2x ao Mês - R$ 60,00",
+        "plano-corte-3": "Corte 3x ao Mês - R$ 90,00",
+        "plano-corte-4": "Corte 4x ao Mês - R$ 110,00",
+        "plano-corte-barba-2": "Corte e Barba 2x ao Mês - R$ 120,00",
+        "plano-corte-barba-3": "Corte e Barba 3x ao Mês - R$ 160,00",
+        "plano-corte-barba-4": "Corte e Barba 4x ao Mês - R$ 200,00"
     }
 
     let tempoTotal = 0
@@ -182,11 +182,33 @@ document.getElementById('formulario-agendamento').addEventListener('submit', fun
         %0ATempo estimado: ${tempoTotal} minutos`
     }
 
-    window.open(`https://wa.me/55997254539?text=${mensagem}`, '_blank')
+    
 
-    //Mostra a mensagem, que deu certo o agendamento
-    alert('Agendamento realizado com sucesso! ')
+    try {
+        const resposta = await fetch('http://localhost:3000/agendamentos', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                nome,
+                data,
+                hora,
+                servico: tipo === 'plano' ? nomePLanos[plano] : nomeServicos[servico]
+            })
+        })
+        if (!resposta.ok) {
+            throw new Error('Erro ao criar agendamento')
+        }
+        //Abre o Whats somente se o agendamento foi salvo com sucesso!
+        window.open(`https://wa.me/55997254539?text=${mensagem}`, '_blank')
 
-    //Clean Forms
-    this.reset()
+        alert('Agendamento realizado com sucesso!')
+
+        this.reset()
+
+    } catch (erro) {
+        console.error(erro)
+        alert('Erro ao realizar o agendamento. Tente novamente.')
+    }
 })

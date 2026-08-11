@@ -194,7 +194,7 @@ document.getElementById('formulario-agendamento').addEventListener('submit', asy
                 nome,
                 data,
                 hora,
-                servico: tipo === 'plano' ? nomePLanos[plano] : nomeServicos[servico],
+                servico: tipo === 'plano' ? nomePlanos[plano] : nomeServicos[servico],
                 servico2: tipo === 'plano' ? null : (nomeServicos[servico2] || null),
                 servico3: tipo === 'plano' ? null : (nomeServicos[servico3] || null)
             })

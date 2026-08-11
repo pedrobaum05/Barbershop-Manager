@@ -195,8 +195,8 @@ document.getElementById('formulario-agendamento').addEventListener('submit', asy
                 data,
                 hora,
                 servico: tipo === 'plano' ? nomePLanos[plano] : nomeServicos[servico],
-                servico: tipo === 'plano' ? null : (nomeServicos[servico2] || null),
-                servico: tipo === 'plano' ? null : (nomeServicos[servico3] || null)
+                servico2: tipo === 'plano' ? null : (nomeServicos[servico2] || null),
+                servico3: tipo === 'plano' ? null : (nomeServicos[servico3] || null)
             })
         })
         if (!resposta.ok) {

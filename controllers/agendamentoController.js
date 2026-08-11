@@ -2,21 +2,40 @@
 const pool = require("../config/database")
 
 const criarAgendamento = async (req, res) => {
-    const { nome, data, hora, servico } = req.body
+    try {
+        const { nome, data, hora, servico, servico2, servico3 } = req.body
 
-    const resultado = await pool.query(
-        `INSERT INTO agendamentos (nome, data, hora, servico)
-        VALUES ($1, $2, $3, $4)
-        RETURNING *`,
-        [nome, data, hora, servico]
-    )
+        const resultado = await pool.query(
+            `INSERT INTO agendamentos
+            (nome, data, hora, servico, servico2, servico3)
+            VALUES ($1, $2, $3, $4, $5, $6)
+            RETURNING *`,
+            [nome, data, hora, servico, servico2, servico3]
+        )
 
-    res.status(201).json(resultado.rows[0])
+        res.status(201).json(resultado.rows[0])
+
+    } catch (erro) {
+        console.error(erro)
+        res.status(500).json({ erro: 'Erro ao criar agendamento' })
+    }
+
 }
 
 const listarAgendamentos = async (req, res) => {
-    const resultado = await pool.query(
-        "SELECT * FROM agendamentos ORDER BY id"
+    const resultado = await pool.query(`
+        SELECT
+        id,
+        nome,
+        TO_CHAR(data, 'YYYY-MM-DD') AS data,
+        TO_CHAR(hora, 'HH24:MI') AS hora,
+        servico,
+        servico2,
+        servico3
+        FROM agendamentos
+        ORDER BY id
+        `
+
     )
 
     res.json(resultado.rows)

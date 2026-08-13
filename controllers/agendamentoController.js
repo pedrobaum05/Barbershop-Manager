@@ -5,6 +5,17 @@ const criarAgendamento = async (req, res) => {
     try {
         const { nome, data, hora, servico, servico2, servico3 } = req.body
 
+        const verificar = await pool.query(
+            'SELECT * FROM agendamentos WHERE data = $1 AND hora = $2',
+            [data, hora]
+        )
+
+        if (verificar.rows.length > 0) {
+            return res.status(409).json({
+                erro: 'Esse horário já está agendado!'
+            })
+        }
+
         const resultado = await pool.query(
             `INSERT INTO agendamentos
             (nome, data, hora, servico, servico2, servico3)

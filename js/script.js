@@ -199,6 +199,12 @@ document.getElementById('formulario-agendamento').addEventListener('submit', asy
                 servico3: tipo === 'plano' ? null : (nomeServicos[servico3] || null)
             })
         })
+        
+        if (resposta.status === 409) {
+            alert('Horário já agendado! Por favor, escolha outro horário.')
+            return
+        }
+
         if (!resposta.ok) {
             throw new Error('Erro ao criar agendamento')
         }

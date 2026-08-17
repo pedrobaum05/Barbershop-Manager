@@ -5,6 +5,37 @@ const criarAgendamento = async (req, res) => {
     try {
         const { nome, data, hora, servico, servico2, servico3 } = req.body
 
+        // Validação de horários de atendimento dentro do Back
+        const [ano, mes, dia] = data.split('-').map(Number)
+        const dataObj = new Date(Date.UTC(ano, mes - 1, dia))
+        const diaSemana = dataObj.getUTCDay()
+        const horaAgendamento = parseInt(hora.split(':')[0])
+
+        // Validação - Domingo
+        if (diaSemana === 0) {
+            return res.status(400).json({
+                erro: 'Barbearia fechada no domingo!'
+            })
+        }
+        
+        // Validação Segunda a Sexta
+        if (diaSemana >= 1 && diaSemana <= 5){
+            if (horaAgendamento < 8 || horaAgendamento > 21) {
+                return res.status(400).json({
+                    erro:'Atendimento de segunda a sexta: 08h ás 21h.'
+                })
+            }
+        }
+
+        //Validação Sábado
+        if (diaSemana === 6) {
+            if (horaAgendamento < 8 || horaAgendamento > 17) {
+                return res.status(400).json({
+                    erro: 'Atendimento sábado: 08h ás 17h'
+                })
+            }
+        }
+
         const verificar = await pool.query(
             'SELECT * FROM agendamentos WHERE data = $1 AND hora = $2',
             [data, hora]
